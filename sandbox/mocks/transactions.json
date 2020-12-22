@@ -1,0 +1,44 @@
+[
+    {
+        "transactionId": "1",
+        "transactionType": "DEBIT",
+        "transactionDate": "2020-12-20",
+        "transactionAmount": 2.5
+    },
+    {
+        "transactionId": "2",
+        "transactionType": "DEBIT",
+        "transactionDate": "2020-12-07",
+        "transactionAmount": 4.0
+    },
+    {
+        "transactionId": "3",
+        "transactionType": "CREDIT",
+        "transactionDate": "2020-11-24",
+        "transactionAmount": 11.73
+    },
+    {
+        "transactionId": "4",
+        "transactionType": "CREDIT",
+        "transactionDate": "2020-10-21",
+        "transactionAmount": 3.99
+    },
+    {
+        "transactionId": "5",
+        "transactionType": "DEBIT",
+        "transactionDate": "2020-12-25",
+        "transactionAmount": 2.6
+    },
+    {
+        "transactionId": "6",
+        "transactionType": "CREDIT",
+        "transactionDate": "2020-12-11",
+        "transactionAmount": 0.85
+    },
+    {
+        "transactionId": "7",
+        "transactionType": "DEBIT",
+        "transactionDate": "2020-12-30",
+        "transactionAmount": 4.2
+    }
+]
