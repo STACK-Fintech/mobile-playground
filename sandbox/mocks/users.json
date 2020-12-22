@@ -1,0 +1,22 @@
+[
+    {
+        "firstName": "John",
+        "lastName": "Smith",
+        "transactions": ["1", "2"]
+    },
+    {
+        "firstName": "Jane",
+        "lastName": "Doe",
+        "transactions": ["2", "3"]
+    },
+    {
+        "firstName": "Austin",
+        "lastName": "Powers",
+        "transactions": ["4", "5"]
+    },
+    {
+        "firstName": "James",
+        "lastName": "Bond",
+        "transactions": ["6", "7"]
+    }
+]
