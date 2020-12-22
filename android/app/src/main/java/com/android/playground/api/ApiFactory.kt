@@ -2,6 +2,7 @@ package com.android.playground.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit
+import retrofit2.adapter.rxjava3.RxJava3CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 
@@ -18,6 +19,7 @@ class ApiFactory(private val host: String = HOST) {
         return Retrofit.Builder()
             .baseUrl(host)
             .addConverterFactory(GsonConverterFactory.create())
+            .addCallAdapterFactory(RxJava3CallAdapterFactory.create())
             .client(httpClient)
             .build()
             .create(Api::class.java)
