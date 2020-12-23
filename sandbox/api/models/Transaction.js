@@ -8,6 +8,10 @@ const Transacton = new mongoose.Schema(
             unique: true,
             required: [true, 'Please specify the ID']
         },
+        transactionDescription: {
+            type: String,
+            required: [true, 'Please specify the description']
+        },
         transactionType: {
             type: String,
             required: [true, 'Please specify the type']

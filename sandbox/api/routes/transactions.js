@@ -14,6 +14,7 @@ router.get("/", async (req, res) => {
 router.post("/", async (req, res) => {
     const trans = new Transaction({
         transactionId: req.body.transactionId,
+        transactionDescription: req.body.transactionDescription,
         transactionType: req.body.transactionType,
         transactionDate: req.body.property,
         transactionAmount: req.body.transactionAmount,
