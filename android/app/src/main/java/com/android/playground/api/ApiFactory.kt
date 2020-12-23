@@ -27,6 +27,6 @@ class ApiFactory(private val host: String = HOST) {
 
     companion object {
         private const val TIMEOUT_SECONDS = 24L
-        private const val HOST = "https://localhost:3000"
+        private const val HOST = ""
     }
 }
