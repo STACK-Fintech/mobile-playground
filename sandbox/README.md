@@ -9,4 +9,4 @@
   2. Download `ngrok` and `unzip /path/to/ngrok.zip`.
   3. `./ngrok authtoken [TOKEN]` to authenticate. 
   4. `./ngrok http [PORT_NUMBER]` (`PORT_NUMBER` is `3000`).
-  
+  5. Share the `https://` forwarding link.
