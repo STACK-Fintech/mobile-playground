@@ -22,4 +22,3 @@ sealed class ViewStateItem {
         val date: String
     ) : ViewStateItem()
 }
-

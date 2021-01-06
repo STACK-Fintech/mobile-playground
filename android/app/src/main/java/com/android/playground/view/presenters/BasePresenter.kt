@@ -5,7 +5,7 @@ import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
-abstract class BasePresenter<ViewController>: LifecycleObserver {
+abstract class BasePresenter<ViewController> : LifecycleObserver {
     private var viewController: ViewController? = null
     private var viewLifecycle: Lifecycle? = null
 
