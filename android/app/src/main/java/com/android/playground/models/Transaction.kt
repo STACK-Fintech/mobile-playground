@@ -1,6 +1,6 @@
 package com.android.playground.models
 
-import java.util.*
+import java.util.Date
 
 data class Transaction(
     val transactionId: String,
