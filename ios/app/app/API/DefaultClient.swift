@@ -8,6 +8,7 @@
 import Foundation
 import Combine
 import RxSwift
+import Alamofire
 
 class DefaultClient: Client {
     
@@ -77,6 +78,15 @@ class DefaultClient: Client {
             return Disposables.create {
                 task.cancel()
             }
+        }
+    }
+    
+    func callAF<DataType>(for endpoint: Endpoint<DataType>, completion: @escaping (DataResponse<Any, AFError>) -> Void) {
+        let request = endpoint.makeRequest(baseURL: baseURL)
+        
+        let jsonRequest = AF.request(request)
+        jsonRequest.responseJSON { (result) in
+            completion(result)
         }
     }
 }

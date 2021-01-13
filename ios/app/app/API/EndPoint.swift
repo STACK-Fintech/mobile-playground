@@ -8,18 +8,23 @@
 import Foundation
 import Combine
 
+enum Commands: String {
+    case transactions = "/transactions"
+    case users = "/users"
+}
+
 struct Endpoint<DataType: Codable> {
-    var path: String
+    var path: Commands
     var queryItems = [URLQueryItem]()
 }
 
 extension Endpoint {
     func makeRequest(baseURL: URL) -> URLRequest {
-        guard var components = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false) else {
+        guard var components = URLComponents(url: baseURL.appendingPathComponent(path.rawValue), resolvingAgainstBaseURL: false) else {
             fatalError("Unable to create URL components \(self)")
         }
                 
-        components.path = "/" + path
+        components.path = path.rawValue
         components.queryItems = queryItems.isEmpty ? nil : queryItems
         
         guard let url = components.url else {

@@ -8,6 +8,7 @@ target 'app' do
   # Pods for app
   pod 'SnapKit', '~> 5.0.0'
   pod 'RxSwift', '6.0.0'
+  pod 'Alamofire', '5.2'
 
   target 'appTests' do
     inherit! :search_paths
