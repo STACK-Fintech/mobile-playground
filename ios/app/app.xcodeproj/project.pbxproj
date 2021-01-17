@@ -21,6 +21,7 @@
 		310B7DF825AB6ABC0007F7F0 /* Client.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B7DF725AB6ABC0007F7F0 /* Client.swift */; };
 		310B7E0025AB6AF70007F7F0 /* DefaultClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B7DFF25AB6AF70007F7F0 /* DefaultClient.swift */; };
 		310B7E0625AB6BA40007F7F0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 310B7E0525AB6BA40007F7F0 /* Transaction.swift */; };
+		31EEAC8225B3D95C009630CB /* MainBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31EEAC8125B3D95C009630CB /* MainBaseViewController.swift */; };
 		56D76F656EAF0EFB08BB8080 /* Pods_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 845A478B5146619BA48A65F8 /* Pods_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +65,7 @@
 		310B7DF725AB6ABC0007F7F0 /* Client.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Client.swift; sourceTree = "<group>"; };
 		310B7DFF25AB6AF70007F7F0 /* DefaultClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultClient.swift; sourceTree = "<group>"; };
 		310B7E0525AB6BA40007F7F0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		31EEAC8125B3D95C009630CB /* MainBaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainBaseViewController.swift; sourceTree = "<group>"; };
 		6F24B0C7EABE4695DB32F5A5 /* Pods_app_appUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app_appUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		845A478B5146619BA48A65F8 /* Pods_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9C7C1F2E70F94206E93894EE /* Pods-app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-app.release.xcconfig"; path = "Target Support Files/Pods-app/Pods-app.release.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				310B7E0D25AB75050007F7F0 /* Configs */,
 				310B7DE125AA1A780007F7F0 /* API */,
 				310B7DB625AA13800007F7F0 /* MainViewController.swift */,
+				31EEAC8125B3D95C009630CB /* MainBaseViewController.swift */,
 				310B7D8925AA13350007F7F0 /* Assets.xcassets */,
 				310B7D8B25AA13350007F7F0 /* LaunchScreen.storyboard */,
 				310B7D8E25AA13350007F7F0 /* Info.plist */,
@@ -447,6 +450,7 @@
 				310B7E0025AB6AF70007F7F0 /* DefaultClient.swift in Sources */,
 				310B7DF325AB57890007F7F0 /* User.swift in Sources */,
 				310B7DEE25AA936D0007F7F0 /* EndPoint.swift in Sources */,
+				31EEAC8225B3D95C009630CB /* MainBaseViewController.swift in Sources */,
 				310B7D8325AA13330007F7F0 /* SceneDelegate.swift in Sources */,
 				310B7DB725AA13800007F7F0 /* MainViewController.swift in Sources */,
 			);
