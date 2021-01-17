@@ -12,9 +12,9 @@ import RxSwift
 protocol Client {
     var baseURL: URL { get }
     
-    func callCombine<DataType: Codable>(for endpoint: Endpoint<DataType>, decoder: JSONDecoder) -> AnyPublisher<DataType, Error>
+    func callCombine<EndpointType: Endpoint>(for endpoint: EndpointType) -> AnyPublisher<EndpointType.DataType, Error>
     
-    func call<DataType: Codable>(for endpoint: Endpoint<DataType>, decoder: JSONDecoder, completion: @escaping (Result<DataType, Error>) -> Void) -> URLSessionDataTask?
+    func call<EndpointType: Endpoint>(for endpoint: EndpointType, completion: @escaping (Result<EndpointType.DataType, Error>) -> Void) -> URLSessionDataTask?
     
-    func callRx<DataType: Codable>(for endpoint: Endpoint<DataType>, decoder: JSONDecoder) -> Observable<DataType>
+    func callRx<EndpointType: Endpoint>(for endpoint: EndpointType) -> Observable<EndpointType.DataType>
 }
