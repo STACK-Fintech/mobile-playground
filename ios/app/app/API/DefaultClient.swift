@@ -15,18 +15,18 @@ class DefaultClient: Client {
     
     let urlSession = URLSession.shared
     
-    func callCombine<DataType>(for endpoint: Endpoint<DataType>, decoder: JSONDecoder = .init()) -> AnyPublisher<DataType, Error> where DataType : Codable {
+    func callCombine<EndpointType>(for endpoint: EndpointType) -> AnyPublisher<EndpointType.DataType, Error> where EndpointType : Endpoint {
         let request = endpoint.makeRequest(baseURL: baseURL)
         
         return urlSession
             .dataTaskPublisher(for: request)
             .map(\.data)
-            .decode(type: DataType.self, decoder: decoder)
+            .decode(type: EndpointType.DataType.self, decoder: endpoint.decoder)
             .receive(on: DispatchQueue.main)
             .eraseToAnyPublisher()
     }
     
-    func call<DataType: Codable>(for endpoint: Endpoint<DataType>, decoder: JSONDecoder = .init(), completion: @escaping (Result<DataType, Error>) -> Void) -> URLSessionDataTask? {
+    func call<EndpointType>(for endpoint: EndpointType, completion: @escaping (Result<EndpointType.DataType, Error>) -> Void) -> URLSessionDataTask? where EndpointType : Endpoint {
         let request = endpoint.makeRequest(baseURL: baseURL)
         
         let task = urlSession.dataTask(with: request) { data, _, error in
@@ -42,7 +42,7 @@ class DefaultClient: Client {
             }
             
             let result = Result {
-                try decoder.decode(DataType.self, from: data)
+                try endpoint.decoder.decode(EndpointType.DataType.self, from: data)
             }
             
             completion(result)
@@ -51,8 +51,8 @@ class DefaultClient: Client {
         return task
     }
     
-    func callRx<DataType>(for endpoint: Endpoint<DataType>, decoder: JSONDecoder = .init()) -> Observable<DataType> where DataType : Codable {
-        return Observable<DataType>.create { observer -> Disposable in
+    func callRx<EndpointType>(for endpoint: EndpointType) -> Observable<EndpointType.DataType> where EndpointType : Endpoint {
+        return Observable<EndpointType.DataType>.create { observer -> Disposable in
             let request = endpoint.makeRequest(baseURL: self.baseURL)
             let task = self.urlSession.dataTask(with: request) { data, response, error in
                 do {
@@ -64,7 +64,7 @@ class DefaultClient: Client {
                         throw NSError(domain: "InvalidDataError", code: 0, userInfo: nil)
                     }
                     
-                    let model = try decoder.decode(DataType.self, from: data)
+                    let model = try endpoint.decoder.decode(EndpointType.DataType.self, from: data)
                     observer.onNext(model)
                     observer.onCompleted()
                 } catch let error {

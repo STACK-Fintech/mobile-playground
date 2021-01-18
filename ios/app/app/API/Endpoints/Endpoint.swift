@@ -1,5 +1,5 @@
 //
-//  EndPoint.swift
+//  Endpoint.swift
 //  app
 //
 //  Created by wenzhong zheng on 2021-01-09.
@@ -8,12 +8,17 @@
 import Foundation
 import Combine
 
-struct Endpoint<DataType: Codable> {
-    var path: String
-    var queryItems = [URLQueryItem]()
+protocol Endpoint {
+    associatedtype DataType: Codable
+    var path: String { get }
+    var queryItems: [URLQueryItem] { get }
+    var decoder: JSONDecoder { get }
+    func makeRequest(baseURL: URL) -> URLRequest
 }
 
 extension Endpoint {
+    var decoder: JSONDecoder { DefaultDecoder() }
+    
     func makeRequest(baseURL: URL) -> URLRequest {
         guard var components = URLComponents(url: baseURL.appendingPathComponent(path), resolvingAgainstBaseURL: false) else {
             fatalError("Unable to create URL components \(self)")
@@ -29,11 +34,3 @@ extension Endpoint {
         return URLRequest(url: url)
     }
 }
-
-struct InvalidEndpointError<R>: Error where R : Codable {
-    let endpoint: Endpoint<R>
-}
-
-
-
-
